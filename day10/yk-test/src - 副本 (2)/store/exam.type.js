@@ -1,0 +1,9 @@
+const INIT_DATA = 'INIT_DATA';
+const CHANGE_NUM = 'CHANGE_NUM'
+const CHOOSE_ITEM = 'CHANGE_ITEM'
+
+export {
+    INIT_DATA,
+    CHANGE_NUM,
+    CHOOSE_ITEM
+}

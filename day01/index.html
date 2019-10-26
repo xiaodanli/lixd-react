@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div class="box" data-id="1">
+        hello
+        <ul>
+            <li>list1</li>
+        </ul>
+    </div> -->
+    <div id="root"></div>
+    <script>
+        //虚拟Dom:描述真实dom节点的js对象
+        // let oBox = {
+        //     tagName:'div',
+        //     attr:{
+        //         class:'box',
+        //         'data-id':1
+        //     },
+        //     children:['hello']
+        // };
+
+        // 创建虚拟DOM
+
+        /**
+            1.函数的参数
+
+            2.函数的功能
+
+            3.函数的返回值
+
+            4.函数在何时调用
+        */ 
+
+        function createElement(tagName,attr,children){
+            return {
+                tagName,
+                attr:{...attr},
+                children:[...children]
+            }
+        }
+
+        let oLi = createElement('li',{},['list1']);
+
+        let oUl = createElement('ul',{},[oLi])
+
+        let oBox = createElement('div',{class:'box','data-id':'1',style:{width:'100px',height:'100px',background:'red'}},['hello',oUl]);
+
+
+        //1>根据虚拟DOM创建真实的DOM，2>并渲染到根节点内
+
+        function render(vnode,rootnode){
+
+            function createDom(vnode){
+                let {tagName,attr,children} = vnode;
+                //1.根据虚拟DOM的标签生成真实的dom节点
+                let ruleEl = document.createElement(tagName);
+
+                //2.添加属性 [[class,'box],['data-id,1]]
+
+                Object.entries(attr).forEach(item => {
+                    let [key,value] = item;
+                    if(typeof value === 'object'){
+                        value = Object.entries(value).map(v => {
+                            return `${v[0]}:${v[1]}`
+                        }).join(';')
+                    }
+                    ruleEl.setAttribute(key,value);
+                })
+
+                console.log(ruleEl)
+
+                //3.添加children
+                children.forEach(cItem => {
+                    if(typeof cItem === 'object'){
+                        ruleEl.appendChild(createDom(cItem));
+                    }else{
+                        ruleEl.innerHTML = cItem;
+                    }
+                })
+
+                return ruleEl
+
+            }
+
+            let el = createDom(vnode);
+
+            rootnode.appendChild(el);
+
+
+        }
+
+        render(oBox,document.querySelector('#root'))
+
+        console.log(oBox);
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+html,body,#root,.App{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+
+.icon{
+    display: inline-block;
+    width:20px;
+    height: 20px;
+    border-radius: 50%;
+    border:1px solid gray;
+    margin-right:10px;
+    &.selected{
+        background: orange;
+    }
+    &.success{
+        background: green;
+    }
+}
+
+
+
+footer{
+    margin-top:20px;
+    button{
+        margin:10px;
+    }
+}
+
+.dialog{
+    width:100%;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+    position: absolute;
+    top:0;
+    left:0;
+
+    .inner-con{
+        background: #fff;
+        padding:20px;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate3d(-50%,-50%,0);
+    }
+}

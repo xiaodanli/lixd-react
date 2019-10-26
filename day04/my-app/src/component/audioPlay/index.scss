@@ -1,0 +1,47 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.wrap{
+    width:600px;
+    height:400px;
+    border:1px solid gray;
+    display: flex; 
+}
+
+.left{
+    width:180px;
+    height:200px;
+    display: flex;
+    flex-wrap: wrap;
+    margin:40px;
+}
+
+.btn{
+    width:40px;
+    height:40px;
+    background: gray;
+    text-align: center;
+    line-height: 40px;
+    margin:10px;   
+}
+
+.btn.active{
+    background: orange;
+}
+
+.power-btn{
+    width:100px;
+    height:20px;
+    background: #000;
+    &:after{
+        content:'';
+        width:50px;
+        height:20px;
+        background: orange;
+        display: inline-block;
+    }
+}

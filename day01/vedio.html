@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./react.development.js"></script>
+    <script src="./react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        let data = {
+            areaData:{
+                title:'录制屏幕',
+                list:[
+                    '窗口对象',
+                    '矩形区域',
+                    '全屏',
+                    '不含任务栏',
+                    '重复上次区域'
+                ]
+            },
+            vedioData:{
+                title:'录制音频'
+            },
+            btns:[
+                {
+                    text:'录制'
+                },
+                {
+                    text:'编辑'
+                },
+                {
+                    text:'选项'
+                }
+            ]
+        };
+
+        let {areaData,vedioData,btns} = data
+
+        let vedioHtml = <div>
+            <div className="top">
+                <h1>{areaData.title}</h1>
+                <ul>
+                    {areaData.list.map((item,index) => <li key={index}>
+                        <input type="radio" name="vedio" disabled = {item === '重复上次区域'}/>{item}
+                    </li>)}
+                </ul>
+            </div>
+            <div className="middle">
+                <input type="checkbox" id="title"/> <label htmlFor="title">{vedioData.title}</label>
+            </div>
+            <div className="bottom">
+                {btns.map((item,index) => <button key={index}>{item.text}</button>)}    
+            </div>
+        </div>
+
+        ReactDOM.render(vedioHtml,document.querySelector('#root'));
+    </script>
+</body>
+</html>

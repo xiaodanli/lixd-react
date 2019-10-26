@@ -1,0 +1,80 @@
+export default [   
+    {
+        title: "家用电器",
+        content:{
+            imgs:'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/88a65e74ef12b4268d23818856fbe4fc_254_96.jpg',
+            title:'家电狂欢会场3',
+            links:[
+                "华为P30系列抢购OPPO",
+                "Reno系列红魔3",
+                "电竞手机联想Z6",
+                "Pro新品"
+            ]
+        }
+    },
+    {
+        title: "手机通讯",
+        content:{
+            imgs:'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/88a65e74ef12b4268d23818856fbe4fc_254_96.jpg',
+            title:'家电狂欢会场4',
+            links:[
+                "华为P30系列抢购OPPO",
+                "Reno系列红魔3",
+                "电竞手机联想Z6",
+                "Pro新品"
+            ]
+        }
+    },
+    {
+        title: "电脑数码",
+        content:{
+            imgs:'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/88a65e74ef12b4268d23818856fbe4fc_254_96.jpg',
+            title:'家电狂欢会场5',
+            links:[
+                "华为P30系列抢购OPPO",
+                "Reno系列红魔3",
+                "电竞手机联想Z6",
+                "Pro新品"
+            ]
+        }
+    },
+    {
+        title: "食品百货",
+        content:{
+            imgs:'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/88a65e74ef12b4268d23818856fbe4fc_254_96.jpg',
+            title:'家电狂欢会场6',
+            links:[
+                "华为P30系列抢购OPPO",
+                "Reno系列红魔3",
+                "电竞手机联想Z6",
+                "Pro新品"
+            ]
+        }
+    },
+    {
+        title: "生活服务",
+        content:{
+            imgs:'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/88a65e74ef12b4268d23818856fbe4fc_254_96.jpg',
+            title:'家电狂欢会场7',
+            links:[
+                "华为P30系列抢购OPPO",
+                "Reno系列红魔3",
+                "电竞手机联想Z6",
+                "Pro新品"
+            ]
+        }
+    },
+    {
+        title: "海囤全球",
+        content:{
+            imgs:'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/88a65e74ef12b4268d23818856fbe4fc_254_96.jpg',
+            title:'家电狂欢会场8',
+            links:[
+                "华为P30系列抢购OPPO",
+                "Reno系列红魔3",
+                "电竞手机联想Z6",
+                "Pro新品"
+            ]
+        }
+    }
+]

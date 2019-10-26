@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./react.development.js"></script>
+    <script src="./react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function Head(props){
+            console.log(props);
+            return <header>{props.title}</header>
+        }
+
+        Head.defaultProps = {
+            title:'默认标题'
+        }
+
+        let topData ={
+            title:'京东JD.COM官网 多快好省 只为品质生活',
+            url:'https://ecmb.bdimg.com/tam-ogel/00d635f3f29a58c7b92f6e8d67992432_121_121.jpg',
+            desc:'京东JD.COM-专业综合网上购物商城，销售超数万品牌，4020万种商品，囊括家电、手机、电脑、服装、居家、母婴、美妆、个护、食品、旅游等13大品类。京东PLUS会员，免费体验30天！京东秉承客户为先， 100％正品行货保障，提供全国联保，机打发票，专业配送，售后服务！'
+        };
+
+        function TopCon(props){
+            let {title,url,desc} = props.con;
+            return <div>
+                <header>{title}</header>   
+                <dl>
+                    <dt>
+                        <img src={url}/>    
+                    </dt>    
+                    <dd>{desc}</dd>
+                </dl> 
+            </div>
+        }
+
+        class Wrap extends React.Component{
+
+             constructor(props){
+                super(props);
+
+                this.state = {
+                    isShow:true,
+                    active:0
+                }
+
+            }
+            render(){
+                let {isShow} = this.state;
+                return <div>
+                     {isShow ? <TopCon con={this.props.con}/> :null }
+                     <button onClick={() => {
+                         this.setState({isShow:!isShow},() => {
+                            console.log(this.state.isShow);
+                         });
+                    }}>切换显示</button>
+                 </div>
+            }
+        }
+
+
+        ReactDOM.render(<Wrap con={topData}/>,document.querySelector('#root'));
+
+        
+    </script>
+</body>
+</html>

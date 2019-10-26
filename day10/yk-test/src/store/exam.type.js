@@ -1,0 +1,11 @@
+const INIT_DATA = 'INIT_DATA';
+const CHANGE_INDEX = 'CHANGE_INDEX';
+const CHOOSE_ITEM = 'CHOOSE_ITEM'
+const SUBMIT = 'SUBMIT'
+
+export {
+    INIT_DATA,
+    CHANGE_INDEX,
+    CHOOSE_ITEM,
+    SUBMIT
+}

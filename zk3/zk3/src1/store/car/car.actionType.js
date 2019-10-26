@@ -1,0 +1,11 @@
+const CHANGE_CHECK = 'CHANGE_CHECK'
+const CHANGE_ALL = 'CHANGE_ALL'
+const CHANEG_NUM = 'CHANEG_NUM'
+const ADD_PRO = 'ADD_PRO'
+
+export {
+    CHANGE_CHECK,
+    CHANGE_ALL,
+    CHANEG_NUM,
+    ADD_PRO
+}

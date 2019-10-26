@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./react.development.js"></script>
+    <script src="./react-dom.development.js"></script>
+    <script src="./babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        console.log(React);
+        console.log('ReactDOM',ReactDOM);
+        let list = [
+            {name:'lili'}
+        ];
+        //创建虚拟DOM  React元素
+        // let oLi = list.map((item,index) => React.createElement('li',{key:index},[item.name]))
+        // let oUl = React.createElement('ul',{key:'2'},oLi)
+        // let oBox = React.createElement('div',{key:'3',className:'box','data-id':'1',style:{width:'100px',height:'100px',background:'red'}},['hello',oUl]);
+
+        // console.log(oBox);
+
+        
+
+        //jsx: javascript语法的扩展  js + xml
+        
+        //jsx  babel来转译 
+
+        //jsx  规则：
+        
+        /**
+            1.遇见<解析标签，遇见{}解析js
+
+            2.class关键字，需要用className代替  for 需要使用htmlFor
+
+            3.style={} 构建js环境 在js环境内，写对象{style的值}
+
+            4.数组会自动展开，循环必须加上key属性
+
+            5.不能使用if else语句，可以用三元表达式来代替
+
+            6.要有唯一的根标签
+
+
+        */ 
+
+        //jsx在底层调用React.createElement()
+
+        let jBox = <div className="box" style={{width:'100px',height:'100px',background:'blue'}}>
+            hello
+            <ul>
+                {list.length ? list.map((item,index) => <li key={index}>{item.name}</li>) : <div>暂无数据</div>}
+            </ul>
+        </div>;
+
+        console.log(jBox);
+
+        ReactDOM.render(jBox,document.querySelector('#root'));
+
+
+
+
+    </script>
+</body>
+</html>
